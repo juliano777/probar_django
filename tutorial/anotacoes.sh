@@ -121,7 +121,7 @@ src/
 
 
 # Terminal 2
-# Entrar no diretório do projeto e executar o servidor
+# Entrar no diretório do projeto e executar o servidor de desenvolvimento:
 
 cd src
 
