@@ -19,7 +19,7 @@ class Post(Model):
         db_table = 'tb_post'
 
 
-class Foo2(Model):
+class Foo(Model):
     '''
     Modelo de tabela para múltiplos schemas no PostgreSQL
     '''
