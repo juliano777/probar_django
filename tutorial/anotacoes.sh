@@ -218,6 +218,20 @@ CREATE TABLE tb_post(
 
 
 
+# Mandar criar as migrações:
+
+python manage.py makemigrations
+
+
+
+# Migração fake
+
+python manage.py migrate --fake
+
+
+
+
+
 
 
 
