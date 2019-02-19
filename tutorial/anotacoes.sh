@@ -34,7 +34,7 @@ python manage.py runserver 0.0.0.0:8000
 
 
 
-# Entrar na pasta do projeto:
+# Verificação da hierarquia de diretório após a inicialização do serviço:
 
 tree projeto
 
