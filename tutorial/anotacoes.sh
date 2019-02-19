@@ -32,9 +32,15 @@ projeto/ (1)
 6) WSGI
 "
 
+
+
 # Iniciando o Django como serviço:
 
 python manage.py runserver 0.0.0.0:8000
+
+
+
+# 
 
 
 
