@@ -46,7 +46,9 @@ projeto/ (1)
        |- urls.py (4)
        |- wsgi.py (5)
        |
-  |- manage.py (6)
+  |- db.sqlite3 (6)
+  |
+  |- manage.py (7)
 
 1) Pasta do projeto
 2) Pasta
