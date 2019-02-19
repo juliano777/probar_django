@@ -3,6 +3,13 @@
 django-admin startproject projeto
 
 
+
+# Entrar na pasta do projeto:
+
+cd projeto
+
+
+
 # Estrutura de Pastas:
 
 "
