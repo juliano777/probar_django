@@ -6,7 +6,7 @@ from django.db.models import TextField
 
 
 class Post(Model):
-    id_ = IntegerField()
+    id_ = IntegerField(db_column='id_')
     titulo = CharField()
     corpo = TextField()
     criado = DateTimeField()
