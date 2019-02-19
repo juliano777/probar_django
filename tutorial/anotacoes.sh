@@ -61,10 +61,11 @@ projeto/ (1)
 1) Pasta do projeto
 2) Pasta
 3) Dunter init
-4) Arquivo principal de configurações
-5) Arquivo de direcionamento de URLs
-6) Arquivo de dados do SQLite 3
+4) Pasta de cache
+5) Arquivo principal de configurações
+6) Arquivo de direcionamento de URLs
 7) WSGI
+8) Arquivo de dados do SQLite 3
 "
 
 
