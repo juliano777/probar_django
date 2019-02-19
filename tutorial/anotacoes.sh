@@ -22,7 +22,6 @@ pip install psycopg2 psycopg2-binary django
 
 
 
-
 # Criação de um projeto:
 
 django-admin startproject projeto
@@ -62,7 +61,6 @@ projeto/ (1)
 # Iniciando o Django como serviço:
 
 python manage.py runserver 0.0.0.0:8000
-
 
 
 # 
