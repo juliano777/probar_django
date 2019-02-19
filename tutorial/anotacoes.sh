@@ -157,7 +157,16 @@ python manage.py migrate
 
 
 
-# 
+# Criação de super usuário:
+
+python manage.py createsuperuser
+
+"
+Username (leave blank to use 'foo'): admin
+Email address: admin@localhost
+Password (again): 
+Superuser created successfully.
+"
 
 
 
