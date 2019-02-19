@@ -17,3 +17,17 @@ class Post(Model):
 
     class Meta:
         db_table = 'tb_post'
+
+
+class Foo(Model):
+    _id = IntegerField(db_column='_id', name='_id', primary_key=True,)
+    campo = TextField(db_column='campo', name='campo',)
+
+    def __str__(self):
+        return self.campo
+
+    class Meta:
+        db_table = 'tb_post'
+
+
+        
