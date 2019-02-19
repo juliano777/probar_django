@@ -74,12 +74,15 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
+             'default': {
+                         'ENGINE': 'django.db.backends.postgresql',
+                         'NAME': 'db_probar_django',
+                         'USER': 'user_django',
+                         'PASSWORD': '123',
+                         'HOST': '127.0.0.1',
+                         'PORT': '5432',
+                         }
+            }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators

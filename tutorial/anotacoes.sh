@@ -137,15 +137,16 @@ vim blog/settings.py
 
 "
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'db_probar_django',
-        'USER': 'user_django',
-        'PASSWORD': '123',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
-}
+             'default': {
+                         'ENGINE': 'django.db.backends.postgresql',
+                         'NAME': 'db_probar_django',
+                         'USER': 'user_django',
+                         'PASSWORD': '123',
+                         'HOST': '127.0.0.1',
+                         'PORT': '5432',
+                         }
+            }
+
 "
 
 
