@@ -86,6 +86,12 @@ django-admin startproject blog
 
 
 
+# Renomeie a pasta de projeto para "src":
+
+mv blog src
+
+
+
 # 
 
 
