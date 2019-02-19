@@ -129,6 +129,27 @@ python manage.py runserver 0.0.0.0:8000
 
 
 
+# Entrar no diretório src e editar o arquivo de configuração:
+
+cd src
+
+vim blog/settings.py
+
+"
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'db_probar_django',
+        'USER': 'user_django',
+        'PASSWORD': '123',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
+}
+"
+
+
+
 
 
 
