@@ -1,18 +1,18 @@
 # Criação do ambiente virtual:
 
-python -m venv probar_django
+python3.7 -m venv virtual_env
 
 
 
 # Entrar no diretório de ambiente virtual:
 
-cd probar_django
+cd virtual_env
 
 
 
 # Habilitar o ambiente virtual:
 
-source bin activate
+source bin/activate
 
 
 
@@ -66,12 +66,8 @@ projeto/ (1)
 6) Arquivo de direcionamento de URLs
 7) WSGI
 8) Arquivo de dados do SQLite 3
+9) manage.py
 "
-
-
-
-# Iniciando o Django como serviço:
-
 
 
 
