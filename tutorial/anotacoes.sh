@@ -18,7 +18,7 @@ source bin activate
 
 # Baixar os pacote necessários para o curso:
 
-
+pip install psycopg2 psycopg2-binary django
 
 
 
