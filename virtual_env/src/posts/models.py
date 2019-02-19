@@ -46,4 +46,5 @@ class Carro(Model):
         return '{} {}'.format(self.marca, self.modelo)
 
     class Meta:
-        db_table = 'sc_foo"."tb_carro'    
+        # Eis o detalhe: coloque o ponto de namespace entre aspas
+        db_table = 'sc_foo"."tb_carro'
