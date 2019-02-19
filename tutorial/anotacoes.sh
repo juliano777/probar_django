@@ -243,7 +243,10 @@ CREATE TABLE sc_foo.tb_foo(
 
 
 
-# 
+# https://docs.djangoproject.com/en/1.10/ref/contrib/admin/
+
+
+
 
 
 
