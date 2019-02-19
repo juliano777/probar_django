@@ -27,7 +27,4 @@ class Foo(Model):
         return self.campo
 
     class Meta:
-        db_table = 'tb_post'
-
-
-        
+        db_table = 'sc_foo"."tb_foo'
