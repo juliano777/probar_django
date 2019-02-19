@@ -32,18 +32,3 @@ class Foo(Model):
 
     class Meta:
         db_table = 'sc_foo"."tb_foo'
-
-
-class Bar(Model):
-    '''
-    Modelo de tabela para múltiplos schemas no PostgreSQL
-    '''
-
-    _id = IntegerField(db_column='_id', name='_id', primary_key=True,)
-    campo2 = TextField(db_column='campo', name='campo',)
-
-    def __str__(self):
-        return self.campo
-
-    class Meta:
-        db_table = 'sc_foo"."tb_bar'
