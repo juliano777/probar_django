@@ -6,11 +6,11 @@ from django.db.models import TextField
 
 
 class Post(Model):
-    id_ = IntegerField(db_column='id', primary_key=True,)
-    titulo = CharField(db_column='', max_length=150)
-    corpo = TextField(db_column='', )
-    criado = DateTimeField(db_column='', )
-    atualizado = DateTimeField(db_column='', )
+    id_ = IntegerField(db_column='id_', name='', primary_key=True,)
+    titulo = CharField(db_column='titulo', name='titulo', max_length=150)
+    titulo = TextField(db_column='titulo', name='titulo',)
+    criado = DateTimeField(db_column='criado', name='criado',)
+    atualizado = DateTimeField(db_column='atualizado', name='atualizado',)
 
     def __str__(self):
         return self.titulo
