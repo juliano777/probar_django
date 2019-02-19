@@ -26,7 +26,6 @@ class Foo(Model):
 
     _id = IntegerField(db_column='_id', name='_id', primary_key=True,)
     campo = TextField(db_column='campo', name='campo',)
-    num = IntegerField(db_column='num')
 
     def __str__(self):
         return self.campo
