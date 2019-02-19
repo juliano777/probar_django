@@ -173,6 +173,25 @@ Superuser created successfully.
 # http://localhost:8000/admin
 # 
 
+python manage.py startapp posts
+
+
+
+# Verificando a estrutura da nova app:
+
+tree posts/
+
+"
+posts/
+├── admin.py
+├── apps.py
+├── __init__.py
+├── migrations
+│   └── __init__.py
+├── models.py
+├── tests.py
+└── views.py
+"
 
 
 
