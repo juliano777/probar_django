@@ -104,7 +104,27 @@ mv blog src
 
 
 
+# Verificando a hierarquia de diretórios antes de rodar o Django como serviço:
+
+tree src/
+
+"
+src/
+├── blog
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+└── manage.py
+"
+
+
+
 # 
+
+
+
+
 
 
 
