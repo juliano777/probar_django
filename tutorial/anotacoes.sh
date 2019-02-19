@@ -28,27 +28,35 @@ django-admin startproject projeto
 
 
 
+# Abra outro terminal e inicialize o Django como serviço (dentro da pasta de projeto):
+
+python manage.py runserver 0.0.0.0:8000
+
+
+
 # Entrar na pasta do projeto:
 
-cd projeto
+tree projeto
 
 
 
 # Estrutura de Pastas:
 
 "
+
 projeto/ (1)
-  |
-  |- projeto/ (2)
-       | 
-       |- __init__.py (3)
-       |- settings.py (4)
-       |- urls.py (4)
-       |- wsgi.py (5)
-       |
-  |- db.sqlite3 (6)
-  |
-  |- manage.py (7)
+├── projeto/ (2)
+│   ├── __init__.py (3)
+│   ├── __pycache__/ (4)
+│   │   ├── __init__.cpython-37.pyc 
+│   │   ├── settings.cpython-37.pyc
+│   │   ├── urls.cpython-37.pyc
+│   │   └── wsgi.cpython-37.pyc
+│   ├── settings.py (5)
+│   ├── urls.py (6)
+│   └── wsgi.py (7)
+├── db.sqlite3 (8)
+└── manage.py (9)
 
 1) Pasta do projeto
 2) Pasta
@@ -63,7 +71,7 @@ projeto/ (1)
 
 # Iniciando o Django como serviço:
 
-python manage.py runserver 0.0.0.0:8000
+
 
 
 # Aborte o serviço com as teclas <Ctrl> + <C>
