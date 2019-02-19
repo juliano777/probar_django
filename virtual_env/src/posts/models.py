@@ -32,19 +32,3 @@ class Foo(Model):
 
     class Meta:
         db_table = 'sc_foo"."tb_foo'
-
-class Carro(Model):
-    '''
-    Modelo de tabela para múltiplos schemas no PostgreSQL
-    '''
-
-    _id = IntegerField(db_column='_id', name='_id', primary_key=True,)
-    marca = TextField(db_column='marca', name='marca',)
-    modelo = TextField(db_column='modelo', name='modelo',)
-
-    def __str__(self):
-        return '{} {}'.format(self.marca, self.modelo)
-
-    class Meta:
-        # Eis o detalhe: coloque o ponto de namespace entre aspas
-        db_table = 'sc_foo"."tb_carro'
