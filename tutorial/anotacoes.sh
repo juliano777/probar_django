@@ -230,6 +230,19 @@ python manage.py migrate --fake
 
 
 
+# Criação de tabela em schema diferente
+
+"
+CREATE SCHEMA sc_foo;
+
+CREATE TABLE sc_foo.tb_foo(
+    _id serial primary key,
+    campo text
+    );
+"
+
+
+
 
 
 
