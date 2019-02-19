@@ -4,6 +4,24 @@ python -m venv probar_django
 
 
 
+# Entrar no diretório de ambiente virtual:
+
+cd probar_django
+
+
+
+# Habilitar o ambiente virtual:
+
+source bin activate
+
+
+
+# Baixar os pacote necessários para o curso:
+
+
+
+
+
 
 # Criação de um projeto:
 
