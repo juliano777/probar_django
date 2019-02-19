@@ -28,7 +28,14 @@ django-admin startproject projeto
 
 
 
-# Abra outro terminal e inicialize o Django como serviço (dentro da pasta de projeto):
+# Entrando na pasta do projeto:
+
+cd projeto
+
+
+
+# Abra outro terminal, repita o comando ativação de ambiente e inicialize o
+Django como serviço (dentro da pasta de projeto):
 
 python manage.py runserver 0.0.0.0:8000
 
