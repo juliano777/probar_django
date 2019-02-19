@@ -195,6 +195,35 @@ posts/
 
 
 
+# Em blog/settings.py adicionar 'posts'
+
+
+
+
+# Entrar no shell do Postgresql:
+
+python manage.py dbshell
+
+
+
+"
+CREATE TABLE tb_post(
+    id_ serial primary key,
+    titulo varchar(150),
+    corpo text,
+    criado timestamp with time zone default now(),
+    atualizado timestamp with time zone default now()
+    );
+"
+
+
+
+
+
+
+
+
+
 
 
 
