@@ -1,7 +1,11 @@
+# Criação de um projeto
+
 django-admin startproject projeto
 
 
+# Estrutura de Pastas
 
+"
 projeto/ (1)
   |
   |- projeto/ (2)
@@ -19,7 +23,7 @@ projeto/ (1)
 4) Arquivo principal de configurações
 5) Arquivo de direcionamento de URLs
 6) WSGI
-
+"
 
 
 
