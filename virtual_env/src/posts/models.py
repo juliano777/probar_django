@@ -18,7 +18,7 @@ class Post(Model):
     class Meta:
         db_table = 'tb_post'
 
-"""
+
 class Foo(Model):
     '''
     Modelo de tabela para múltiplos schemas no PostgreSQL
@@ -32,4 +32,3 @@ class Foo(Model):
 
     class Meta:
         db_table = 'sc_foo"."tb_foo'
-"""
