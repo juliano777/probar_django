@@ -19,7 +19,11 @@ class Post(Model):
         db_table = 'tb_post'
 
 
-class Foo(Model):
+class Foo2(Model):
+    '''
+    Modelo de tabela para múltiplos schemas no PostgreSQL
+    '''
+
     _id = IntegerField(db_column='_id', name='_id', primary_key=True,)
     campo = TextField(db_column='campo', name='campo',)
 
