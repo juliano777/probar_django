@@ -120,7 +120,12 @@ src/
 
 
 
-# 
+# Terminal 2
+# Entrar no diretório do projeto e executar o servidor
+
+cd src
+
+python manage.py runserver 0.0.0.0:8000
 
 
 
