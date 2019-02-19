@@ -55,7 +55,8 @@ projeto/ (1)
 3) Dunter init
 4) Arquivo principal de configurações
 5) Arquivo de direcionamento de URLs
-6) WSGI
+6) Arquivo de dados do SQLite 3
+7) WSGI
 "
 
 
