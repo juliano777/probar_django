@@ -1,4 +1,11 @@
-# Criação de um projeto
+# Criação do ambiente virtual:
+
+python -m venv probar_django
+
+
+
+
+# Criação de um projeto:
 
 django-admin startproject projeto
 
