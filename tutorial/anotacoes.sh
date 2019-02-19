@@ -170,6 +170,7 @@ Superuser created successfully.
 
 
 
+# http://localhost:8000/admin
 # 
 
 
