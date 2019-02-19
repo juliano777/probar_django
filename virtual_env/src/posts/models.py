@@ -14,3 +14,6 @@ class Post(Model):
 
     def __str__(self):
         return self.titulo
+
+     class Meta:
+        db_table = 'tb_post'
