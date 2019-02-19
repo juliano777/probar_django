@@ -151,9 +151,13 @@ DATABASES = {
 
 
 
-# dpldfpl
+# Execução das migrações:
+
+python manage.py migrate
 
 
+
+# 
 
 
 
