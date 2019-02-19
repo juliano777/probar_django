@@ -3,7 +3,7 @@
 django-admin startproject projeto
 
 
-# Estrutura de Pastas
+# Estrutura de Pastas:
 
 "
 projeto/ (1)
