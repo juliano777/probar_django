@@ -74,4 +74,20 @@ cd ..
 
 
 
+# Apague a pasta projeto:
+
+rm -fr projeto
+
+
+
+# Crie um novo projeto chamado "blog":
+
+django-admin startproject blog
+
+
+
+# 
+
+
+
 
