@@ -5,7 +5,8 @@ from posts.models import Post
 # Register your models here.
 
 class PostModelAdmin(ModelAdmin):
-    exclude = ('criado', 'atualizado')
+    # Caso queira excluir campos do model admin
+    # exclude = ('criado', 'atualizado')
 
     class Meta:
         model = Post
