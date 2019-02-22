@@ -1,4 +1,4 @@
-from django.contrib.admin import register as adm_reg
+from django.contrib.admin.site import register as adm_reg
 from django.contrib.admin import ModelAdmin
 from posts.models import Post
 
