@@ -198,6 +198,9 @@ posts/
 # Em blog/settings.py adicionar 'posts'
 
 
+# https://docs.djangoproject.com/pt-br/1.10/ref/models/fields/
+
+
 
 
 # Entrar no shell do Postgresql:
@@ -243,6 +246,7 @@ CREATE TABLE sc_foo.tb_foo(
 
 
 
+# Configura o que e como vai ser exibido na interface admin:
 # https://docs.djangoproject.com/en/1.10/ref/contrib/admin/
 
 

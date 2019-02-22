@@ -8,7 +8,7 @@ from django.db.models import TextField
 
 class Post(Model):
     _id = AutoField(db_column='_id', name='_id', primary_key=True,)
-    titulo = CharField(db_column='titulo', name='titulo', max_length=150)
+    titulo = CharField(db_column='titulo', name='titulo', max_length=150,)
     titulo = TextField(db_column='titulo', name='titulo',)
     criado = DateTimeField(db_column='criado', name='criado',)
     atualizado = DateTimeField(db_column='atualizado', name='atualizado',)

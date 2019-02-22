@@ -1,6 +1,12 @@
-from django.contrib import admin
+from django.contrib.admin import register as adm_reg
+from django.contrib.admin import ModelAdmin
 from posts.models import Post
 
 # Register your models here.
 
-admin.site.register(Post)
+class PostModelAdmin(ModelAdmin):
+    class Meta:
+        model = Post
+
+
+adm_reg(Post, PostModelAdmin)
