@@ -1,4 +1,4 @@
-from django.contrib.admin.site import register as adm_reg
+from django.contrib.admin import site
 from django.contrib.admin import ModelAdmin
 from posts.models import Post
 
@@ -9,4 +9,4 @@ class PostModelAdmin(ModelAdmin):
         model = Post
 
 
-adm_reg(Post, PostModelAdmin)
+site.register(Post, PostModelAdmin)
