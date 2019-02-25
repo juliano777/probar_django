@@ -49,8 +49,8 @@ class PostModelAdmin(ModelAdmin):
     # Filtro do campo tags
     list_filter = (PostArrayListFilter,)
 
-    #
-    search_filter = ('titulo', )
+    # Filtro de buscas
+    #search_filter = ('titulo', )
 
     class Meta:
         model = Post
