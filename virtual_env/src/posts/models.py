@@ -19,7 +19,7 @@ class Post(Model):
 
     class Meta:
         db_table = 'tb_post'
-        verbose_name_plural = 'Post'
+        verbose_name_plural = 'Post'  # Tirar o 's' do plural na exibição
 
 class Foo(Model):
     '''
@@ -34,3 +34,4 @@ class Foo(Model):
 
     class Meta:
         db_table = 'sc_foo"."tb_foo'
+        verbose_name_plural = 'Foo'
