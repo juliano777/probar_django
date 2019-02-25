@@ -5,11 +5,14 @@ from django.db.models import IntegerField
 from django.db.models import Model
 from django.db.models import TextField
 
+from django_postgres_extensions.models.fields import ArrayField as PgArrayField
+
 
 class Post(Model):
     _id = AutoField(db_column='_id', name='_id', primary_key=True,)
     titulo = CharField(db_column='titulo', name='titulo', null=True,
                        max_length=150)
+    tags = ArrayField(models.CharField(max_length=15), null=True, blank=True)
     corpo = TextField(db_column='corpo', name='corpo', null=True,)
     criado = DateTimeField(db_column='criado', name='criado', null=False,
                            auto_now_add=True)
