@@ -46,6 +46,9 @@ class PostModelAdmin(ModelAdmin):
     # O que exibir na listagem
     list_display = ('__str__', 'criado')
 
+    # Link sobre o(s) campo(s) desejado(s)
+    list_display_links = ('__str__', )
+
     # Filtro do campo tags
     list_filter = (PostArrayListFilter,)
 
