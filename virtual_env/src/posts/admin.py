@@ -9,7 +9,7 @@ from posts.models import Foo
 
 class PostArrayListFilter(SimpleListFilter):
     """This is a list filter based on the values
-    from a model's `keywords` ArrayField. """
+    from a model's `tags` ArrayField. """
 
     title = 'Tags'
     parameter_name = 'tags'
@@ -22,7 +22,7 @@ class PostArrayListFilter(SimpleListFilter):
         tags = Post.objects.values_list('tags', flat=True)
         tags = [(t,t) for sublist in tags for t in sublist if t]
         tags = sorted(set(tags))
-        return keywords
+        return tags
 
     def queryset(self, request, queryset):
         # when a user clicks on a filter, this method gets called. The
@@ -32,7 +32,7 @@ class PostArrayListFilter(SimpleListFilter):
         lookup_value = self.value()  # The clicked keyword. It can be None!
         if lookup_value:
             # the __contains lookup expects a list, so...
-            queryset = queryset.filter(keywords__contains=[lookup_value])
+            queryset = queryset.filter(tags__contains=[lookup_value])
         return queryset
 
 class PostModelAdmin(ModelAdmin):
