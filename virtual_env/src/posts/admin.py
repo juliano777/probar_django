@@ -50,6 +50,8 @@ class PostModelAdmin(ModelAdmin):
     list_filter = (PostArrayListFilter,)
 
     # Campos de busca
+    # Esse recurso pode ser muito melhor aproveitado no PostgreSQL se
+    # for utilizado um campo tsvector (Full Text Search)
     search_fields = ('titulo', )
 
     class Meta:
