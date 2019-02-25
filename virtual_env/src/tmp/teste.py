@@ -1,6 +1,9 @@
-from django.db import models
+from django.db.models import Model
+from django.db.models import
 
-class Item(models.Model):
+from django.contrib.admin import SimpleListFilter
+
+class Item(Model):
     title = models.CharField(max_length=128)
     keywords = ArrayField(
         models.CharField(max_length=32, blank=True),
@@ -48,4 +51,4 @@ class ItemAdmin(admin.ModelAdmin):
     list_display = ('title', )
     list_filter = (ArrayFieldListFilter, )
 
-admin.site.register(models.Item, ItemAdmin)        
+admin.site.register(models.Item, ItemAdmin)
