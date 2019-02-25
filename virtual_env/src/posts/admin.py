@@ -15,7 +15,7 @@ class PostModelAdmin(ModelAdmin):
     # O que exibir na listagem
     list_display = ('__str__', 'criado')
 
-    #
+    # Filtro do campo tags
     list_filter = ('tags',)
 
     class Meta:
