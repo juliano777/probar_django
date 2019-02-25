@@ -50,7 +50,7 @@ class PostModelAdmin(ModelAdmin):
     list_display_links = ('__str__', )
 
     # Filtro do campo tags
-    list_filter = (PostArrayListFilter,)
+    list_filter = (PostArrayListFilter, 'criado')
 
     # Campos de busca
     # Esse recurso pode ser muito melhor aproveitado no PostgreSQL se
