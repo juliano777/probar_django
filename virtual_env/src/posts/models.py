@@ -11,9 +11,10 @@ class Post(Model):
     titulo = CharField(db_column='titulo', name='Título', null=True,
                        max_length=150)
     corpo = TextField(db_column='corpo', name='corpo', null=True,)
-    criado = DateTimeField(db_column='criado', name='criado', null=False)
+    criado = DateTimeField(db_column='criado', name='criado', null=False,
+                           auto_now_add=True)
     atualizado = DateTimeField(db_column='atualizado', name='atualizado',
-                               null=False)
+                               null=False, auto_now_add=True)
 
     def __str__(self):
         return '{} - {}'.format(self.criado, 'criado')
