@@ -214,8 +214,8 @@ CREATE TABLE tb_post(
     _id serial primary key,
     titulo varchar(150),
     corpo text,
-    criado timestamp with time zone default now(),
-    atualizado timestamp with time zone default now()
+    criado timestamp with time zone default now() not null,
+    atualizado timestamp with time zone default now() not null
     );
 "
 
