@@ -87,6 +87,7 @@ DATABASES = {
                          }
             }
 
+# configuração necessária para utilizar o contrib de PostgreSQL
 DEFAULT_INDEX_TABLESPACE = 'pg_default'
 
 
