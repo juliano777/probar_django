@@ -44,13 +44,13 @@ class PostModelAdmin(ModelAdmin):
     exclude = ('criado', 'atualizado')
 
     # O que exibir na listagem
-    list_display = ('__str__', 'criado')
+    list_display = ('__str__', 'criado', 'tags')
 
     # Link sobre o(s) campo(s) desejado(s)
     list_display_links = ('__str__', )
 
-    # O que exibir na listagem
-    list_editable = ('criado', )    
+    # Campos editáveis na listagem
+    list_editable = ('tags', )
 
     # Filtro do campo tags
     list_filter = (PostArrayListFilter, 'criado')
