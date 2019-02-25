@@ -10,6 +10,8 @@ class Item(Model):
     keywords = PgArrayField(CharField(max_length=32, blank=True), default=list,
                             blank=True, )
 
+# ===========================================================================
+
 from django.contrib import admin
 
 class ItemAdmin(admin.ModelAdmin):
@@ -19,8 +21,9 @@ class ItemAdmin(admin.ModelAdmin):
 admin.site.register(models.Item, ItemAdmin)
 
 class ArrayFieldListFilter(admin.SimpleListFilter):
-    """This is a list filter based on the values
-    from a model's `keywords` ArrayField. """
+    '''
+    Filtragem de lista baseada nos valores do model Post, campo "tags"
+    '''
 
     title = 'Keywords'
     parameter_name = 'keywords'
