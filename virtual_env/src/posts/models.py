@@ -17,7 +17,7 @@ class Post(Model):
                                null=False, auto_now_add=True)
 
     def __str__(self):
-        return '{} - {}'.format(self.criado, 'criado')
+        return '{} - {}'.format(self.titulo, self.criado)
 
     class Meta:
         db_table = 'tb_post'
