@@ -15,7 +15,7 @@ class Post(Model):
     atualizado = DateTimeField(db_column='atualizado', name='atualizado',)
 
     def __str__(self):
-        return '{} - {}'.format('titulo', 'criado')
+        return '{} - {}'.format(self.titulo, 'criado')
 
     class Meta:
         db_table = 'tb_post'
