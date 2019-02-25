@@ -1,15 +1,14 @@
 from django.db.models import Model
-from django.db.models import
+from django.db.models import CharField
+
+from django.contrib.postgres.fields import ArrayField as PgArrayField
 
 from django.contrib.admin import SimpleListFilter
 
 class Item(Model):
-    title = models.CharField(max_length=128)
-    keywords = ArrayField(
-        models.CharField(max_length=32, blank=True),
-        default=list,
-        blank=True,
-    )
+    title = CharField(max_length=128)
+    keywords = PgArrayField(CharField(max_length=32, blank=True), default=list,
+                            blank=True, )
 
 from django.contrib import admin
 
