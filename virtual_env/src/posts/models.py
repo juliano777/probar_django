@@ -14,6 +14,8 @@ class Post(Model):
     criado = DateTimeField(db_column='criado', name='criado',)
     atualizado = DateTimeField(db_column='atualizado', name='atualizado',)
 
+    exclude = ('criado, atualizado')
+
     def __str__(self):
         return self.titulo
 
