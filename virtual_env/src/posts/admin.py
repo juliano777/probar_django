@@ -11,6 +11,7 @@ class PostModelAdmin(ModelAdmin):
 
     class Meta:
         model = Post
+        verbose_name_plural = 'Post'
 
 
 site.register(Post, PostModelAdmin)
