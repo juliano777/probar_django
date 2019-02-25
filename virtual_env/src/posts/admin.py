@@ -10,8 +10,7 @@ class PostModelAdmin(ModelAdmin):
     # exclude = ('criado', 'atualizado')
 
     class Meta:
-        model = Post
-        verbose_name_plural = 'Post'
+        model = Post        
 
 
 site.register(Post, PostModelAdmin)

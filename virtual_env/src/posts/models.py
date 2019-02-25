@@ -19,6 +19,7 @@ class Post(Model):
 
     class Meta:
         db_table = 'tb_post'
+        verbose_name_plural = 'Post'
 
 class Foo(Model):
     '''
