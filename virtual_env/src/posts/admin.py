@@ -13,7 +13,7 @@ class PostModelAdmin(ModelAdmin):
     exclude = ('criado', 'atualizado')
 
     # O que exibir na listagem
-    list_display = ('__str__',)
+    list_display = ('__str__', 'criado')
 
     class Meta:
         model = Post
