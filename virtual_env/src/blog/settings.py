@@ -87,7 +87,7 @@ DATABASES = {
                          }
             }
 
-
+DEFAULT_INDEX_TABLESPACE = 'pg_default'
 
 
 # Password validation
