@@ -8,8 +8,9 @@ from posts.models import Foo
 # Register your models here.
 
 class PostArrayListFilter(SimpleListFilter):
-    """This is a list filter based on the values
-    from a model's `tags` ArrayField. """
+    '''
+    Filtragem de lista baseada nos valores do model Post, campo "tags"
+    '''
 
     title = 'Tags / Assuntos'
     parameter_name = 'tags'
