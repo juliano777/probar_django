@@ -15,6 +15,9 @@ class PostModelAdmin(ModelAdmin):
     # O que exibir na listagem
     list_display = ('__str__', 'criado')
 
+    #
+    list_filter = ('tags',)
+
     class Meta:
         model = Post
 
