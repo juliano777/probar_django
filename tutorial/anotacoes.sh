@@ -246,6 +246,9 @@ CREATE TABLE sc_foo.tb_foo(
 
 
 
+# Para colocarmos nosso model no admin, devemos editar o arquivo admin.py
+# da app e registrar essa app no settings.py
+#
 # Configura o que e como vai ser exibido na interface admin:
 # https://docs.djangoproject.com/en/1.10/ref/contrib/admin/
 
