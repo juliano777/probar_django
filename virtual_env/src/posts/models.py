@@ -5,7 +5,7 @@ from django.db.models import IntegerField
 from django.db.models import Model
 from django.db.models import TextField
 
-from django_postgres_extensions.models.fields import ArrayField
+from django.contrib.postgres.fields import ArrayField
 
 
 class Post(Model):
