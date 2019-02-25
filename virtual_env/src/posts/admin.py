@@ -1,6 +1,7 @@
 from django.contrib.admin import site
 from django.contrib.admin import ModelAdmin
 from posts.models import Post
+from posts.models import Foo
 
 # Register your models here.
 
@@ -13,3 +14,4 @@ class PostModelAdmin(ModelAdmin):
 
 
 site.register(Post, PostModelAdmin)
+site.register(Foo)
