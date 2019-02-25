@@ -6,6 +6,9 @@ from posts.models import Foo
 # Register your models here.
 
 class PostModelAdmin(ModelAdmin):
+    # Esta classe ModelAdmin serve para utilizarmos as opções de controle de
+    # exibição
+
     # Caso queira excluir campos do model admin
     # exclude = ('criado', 'atualizado')
 
