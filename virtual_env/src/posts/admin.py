@@ -50,7 +50,7 @@ class PostModelAdmin(ModelAdmin):
     list_display_links = ('__str__', )
 
     # O que exibir na listagem
-    list_editable = ('__str__', 'criado')    
+    list_editable = ('criado', )    
 
     # Filtro do campo tags
     list_filter = (PostArrayListFilter, 'criado')
