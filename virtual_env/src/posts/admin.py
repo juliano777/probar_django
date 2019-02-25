@@ -1,15 +1,13 @@
 from django.contrib.admin import site
 from django.contrib.admin import ModelAdmin
-
-
-
+from django.contrib.admin import SimpleListFilter
 
 from posts.models import Post
 from posts.models import Foo
 
 # Register your models here.
 
-class PostArrayListFilter(admin.SimpleListFilter):
+class PostArrayListFilter(SimpleListFilter):
     """This is a list filter based on the values
     from a model's `keywords` ArrayField. """
 
@@ -48,7 +46,7 @@ class PostModelAdmin(ModelAdmin):
     list_display = ('__str__', 'criado')
 
     # Filtro do campo tags
-    list_filter = ('tags',)
+    list_filter = (PostArrayListFilter,)
 
     class Meta:
         model = Post
