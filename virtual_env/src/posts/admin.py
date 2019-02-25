@@ -12,6 +12,8 @@ class PostModelAdmin(ModelAdmin):
     # Caso queira excluir campos do model admin
     # exclude = ('criado', 'atualizado')
 
+    list_display = ('__str__')
+
     class Meta:
         model = Post
 
