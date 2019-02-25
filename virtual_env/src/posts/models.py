@@ -12,7 +12,7 @@ class Post(Model):
     _id = AutoField(db_column='_id', name='_id', primary_key=True,)
     titulo = CharField(db_column='titulo', name='titulo', null=True,
                        max_length=150)
-    #tags = PgArrayField(CharField(max_length=15), null=True, blank=True)
+    tags = PgArrayField(CharField(max_length=15), null=True, blank=True)
     corpo = TextField(db_column='corpo', name='corpo', null=True,)
     criado = DateTimeField(db_column='criado', name='criado', null=False,
                            auto_now_add=True)
