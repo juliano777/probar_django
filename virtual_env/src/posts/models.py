@@ -26,6 +26,7 @@ class Post(Model):
         db_table = 'tb_post'
         verbose_name_plural = 'Post'  # Tirar o 's' do plural na exibição
 
+
 class Foo(Model):
     '''
     Modelo de tabela para múltiplos schemas no PostgreSQL
