@@ -21,7 +21,7 @@ class PostArrayListFilter(SimpleListFilter):
         # appear in the admin's right sidebar
 
         tags = Post.objects.values_list('tags', flat=True)
-        tags = [(t,t) for sublist in tags for t in sublist if t]
+        tags = [(t, t) for sublist in tags for t in sublist if t]
         tags = sorted(set(tags))
         return tags
 
