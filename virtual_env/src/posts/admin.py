@@ -2,8 +2,8 @@ from django.contrib.admin import site
 from django.contrib.admin import ModelAdmin
 from django.contrib.admin import SimpleListFilter
 
-from posts.models import Post
 from posts.models import Foo
+from posts.models import Post
 
 
 class PostArrayListFilter(SimpleListFilter):
