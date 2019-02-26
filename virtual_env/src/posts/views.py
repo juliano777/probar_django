@@ -5,7 +5,8 @@ def post_create(request):
     return HttpResponse('<h1>Create</h1>')
 
 def post_detail(request):
-    return HttpResponse('<h1>Detail</h1>')
+    context = {'titulo': 'DETAIL'}
+    return render(request, 'index.html', context)
 
 def post_list(request):
     context = {'titulo': 'LIST'}
