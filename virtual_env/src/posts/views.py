@@ -8,7 +8,8 @@ def post_detail(request):
     return HttpResponse('<h1>Detail</h1>')
 
 def post_list(request):
-    return render(request, 'index.html', {})
+    context = {'titulo': 'LIST'}
+    return render(request, 'index.html', context)
 
 
 
