@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from post import Post
+from posts.models import Post
 
 def post_create(request):
     return HttpResponse('<h1>Create</h1>')
