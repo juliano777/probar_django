@@ -6,5 +6,6 @@ from django.contrib import admin
 
 urlpatterns = (
                url(r'^admin/', admin.site.urls),
+               # Chama o urls.py de posts
                url(r'^posts/', include('posts.urls'))
               )
