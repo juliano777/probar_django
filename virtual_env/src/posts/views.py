@@ -10,11 +10,11 @@ def post_create(request):
 
 
 def post_detail(request):
-    return render(request, 'detail.html', get_post_detail(request))
+    return render(request, 'posts/detail.html', get_post_detail(request))
 
 
 def post_list(request):
-    return render(request, 'index.html', get_post_list(request))
+    return render(request, 'posts/index.html', get_post_list(request))
 
 
 def post_update(request):
