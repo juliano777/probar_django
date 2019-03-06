@@ -22,6 +22,9 @@ class Post(Model):
     def __str__(self):
         return '{} - {}'.format(self._id, self.titulo)
 
+    def get_absolute_url(self):
+        return 'posts/{}'.format(self._id)
+
     class Meta:
         db_table = 'tb_post'
         verbose_name_plural = 'Post'  # Tirar o 's' do plural na exibição
