@@ -12,9 +12,9 @@ def get_post_list(request):
 
     return context
 
-def get_post_detail(requestm pk=None):
+def get_post_detail(request, pk=None):
     if request.user.is_authenticated():
-        instance = get_object_or_404(Post, pk=11)
+        instance = get_object_or_404(Post, pk=pk)
         context = {
                    'titulo': 'Detail - Usuário autenticado',
                    'instance': instance,
