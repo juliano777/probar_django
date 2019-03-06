@@ -20,7 +20,7 @@
       <td align="left">
         <a href='{% url "url_detail" pk=i.pk %}'>{{i.titulo}}</a>
       </td>
-      <td><a href="/update/{{i.pk}}/">[Editar]</a></td>
+      <td><a href='{% url "url_update" pk=i.pk %}'>[Editar]</a></td>
       <td><a href="/delete/{{i.pk}}/">[Apagar]</a></td>
     </tr>
 
