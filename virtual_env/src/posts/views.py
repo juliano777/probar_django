@@ -10,8 +10,8 @@ def post_create(request):
     return HttpResponse('<h1>Create</h1>')
 
 
-def post_detail(request):
-    return render(request, 'posts/detail.html', get_post_detail(request))
+def post_detail(request, pk=None):
+    return render(request, 'posts/detail.html', get_post_detail(request, pk))
 
 
 def post_list(request):
