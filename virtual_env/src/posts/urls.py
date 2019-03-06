@@ -14,7 +14,7 @@ urlpatterns = (
                # Create
                url(r'^create/$', post_create, name='url_create'),
                # Detail
-               url(r'^(?P<pk>\d+)/$', post_detail),
+               url(r'^(?P<pk>\d+)/$', post_detail, name='url_detail'),
                # Update
                url(r'^update/$', post_update, name='url_update'),
                # Delete
