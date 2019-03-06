@@ -6,15 +6,17 @@
 
   <hr />
   <table>
-  {% for i in lista %}
+
   <tr>
-    <td>{{i.pk}}</th>
+    {% for i in lista %}
+    <td>{{i.pk}}</td>
     <td align="left"><a href="/posts/{{i.pk}}/">{{i.titulo}}</a></td>
     <td><a href="/update/{{i.pk}}/">[Editar]</a></td>
     <td><a href="/delete/{{i.pk}}/">[Apagar]</a></td>
+    {% endfor %}
   </tr>
 
-  {% endfor %}
+
   </table>
 
 </body>
