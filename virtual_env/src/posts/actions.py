@@ -1,4 +1,4 @@
-# Lógica de negócio aqui!!!
+from django.shortcuts import get_object_or_404
 
 from posts.models import Post
 
@@ -14,7 +14,7 @@ def get_post_list(request):
 
 def get_post_detail(request):
     if request.user.is_authenticated():
-        queryset = Post.objects.all()
+        instance = get_object_or_404(Post, pk=1)
         context = {'titulo': 'Detail - Usuário autenticado', 'lista': queryset}
     else:
         context = {'titulo': 'No access!!!'}
