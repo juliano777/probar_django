@@ -8,8 +8,9 @@
   {% for i in lista %}
   <!-- Exibe cada item (título) como link -->
   {{i.pk}} - <a href="/posts/{{i.pk}}/">{{i.titulo}}</a>&nbsp;
-  <a href="/update/{{i.pk}}/">[Editar]</a><br />
-
+  <a href="/update/{{i.pk}}/">[Editar]</a>&nbsp;
+  <a href="/delete/{{i.pk}}/">[Apagar]</a><br />
+  <hr />
   {% endfor %}
 
 </body>
