@@ -13,13 +13,19 @@
       <th></th>
     </tr>
 
+    {% for i in lista %}
 
-  <tr>
-    <td>{{i.pk}}</td>
-    <td align="left"><a href="/posts/{{i.pk}}/">{{i.titulo}}</a></td>
-    <td><a href="/update/{{i.pk}}/">[Editar]</a></td>
-    <td><a href="/delete/{{i.pk}}/">[Apagar]</a></td>
-  </tr>
+    <tr>
+      <td>{{i.pk}}</td>
+      <td align="left"><a href="/posts/{{i.pk}}/">{{i.titulo}}</a></td>
+      <td><a href="/update/{{i.pk}}/">[Editar]</a></td>
+      <td><a href="/delete/{{i.pk}}/">[Apagar]</a></td>
+    </tr>
+
+    {% endfor %}
+
+
+
 
   </table>
 
@@ -29,9 +35,9 @@
 
 <!-- Exibe cada item (título) como link -->
 <!--
-{% for i in lista %}
 
-{% endfor %}
+
+
 
 {{i.pk}} - <a href="/posts/{{i.pk}}/">{{i.titulo}}</a>&nbsp;
 <a href="/update/{{i.pk}}/">[Editar]</a>&nbsp;
