@@ -25,7 +25,7 @@ class Post(Model):
         return '{} - {}'.format(self._id, self.titulo)
 
     def get_absolute_url(self):
-        return reverse('detail', kwargs={'id': self._id})
+        return reverse('post:detail', kwargs={'id': self._id})
 
     class Meta:
         db_table = 'tb_post'
