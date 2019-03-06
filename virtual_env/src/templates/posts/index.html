@@ -8,8 +8,8 @@
   <table>
   {% for i in lista %}
   <tr>
-    <th>{{i.pk}}</th>
-    <th><a href="/posts/{{i.pk}}/">{{i.titulo}}</a></th>
+    <td>{{i.pk}}</th>
+    <td align="left"><a href="/posts/{{i.pk}}/">{{i.titulo}}</a></td>
     <td><a href="/update/{{i.pk}}/">[Editar]</a></td>
     <td><a href="/delete/{{i.pk}}/">[Apagar]</a></td>
   </tr>
