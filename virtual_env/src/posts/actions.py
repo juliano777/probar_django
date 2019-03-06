@@ -17,7 +17,8 @@ def get_post_detail(request):
         instance = get_object_or_404(Post, pk=11)
         context = {
                    'titulo': 'Detail - Usuário autenticado',
-                   'instance': instance}
+                   'instance': instance,
+                   }
     else:
         context = {'titulo': 'No access!!!'}
 
