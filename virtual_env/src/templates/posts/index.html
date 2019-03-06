@@ -5,22 +5,29 @@
   <h1>Página: {{titulo}}</h1>
 
   <hr />
+  <table>
   {% for i in lista %}
-  <!-- Exibe cada item (título) como link -->
-  {{i.pk}} - <a href="/posts/{{i.pk}}/">{{i.titulo}}</a>&nbsp;
-  <a href="/update/{{i.pk}}/">[Editar]</a>&nbsp;
-  <a href="/delete/{{i.pk}}/">[Apagar]</a><br />
-  <hr />
+
   {% endfor %}
+  </table>
 
   <table>
   <tr>
     <th>{{i.pk}}</th>
     <th><a href="/posts/{{i.pk}}/">{{i.titulo}}</a></th>
     <th><a href="/update/{{i.pk}}/">[Editar]</a></th>
-    <th><a href="/delete/{{i.pk}}/">[Apagar]</a></th>    
+    <th><a href="/delete/{{i.pk}}/">[Apagar]</a></th>
   </tr>
 </table>
 
 </body>
 <html>
+
+
+<!-- Exibe cada item (título) como link -->
+<!--
+{{i.pk}} - <a href="/posts/{{i.pk}}/">{{i.titulo}}</a>&nbsp;
+<a href="/update/{{i.pk}}/">[Editar]</a>&nbsp;
+<a href="/delete/{{i.pk}}/">[Apagar]</a><br />
+<hr />
+-->
