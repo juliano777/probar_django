@@ -10,8 +10,7 @@ def post_create(request):
 
 
 def post_detail(request):
-    context = {'titulo': 'DETAIL'}
-    return render(request, 'index.html', context)
+    return render(request, 'index.html', get_post_detail(request))
 
 
 def post_list(request):
