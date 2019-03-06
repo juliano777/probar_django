@@ -6,7 +6,7 @@
 
   <hr />
   {% for i in lista %}
-  {{i.pk}} - {{i.titulo}}<br />
+  <a href="/posts/{{i.pk}}/">{{i.pk}} - {{i.titulo}}</a><br />
   <hr />
   {% endfor %}
 
