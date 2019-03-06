@@ -10,9 +10,9 @@ from posts.views import post_update
 
 urlpatterns = (
                # List
-               url(r'^list/$|^$', post_list),
+               url(r'^list/$|^$', post_list, name='url_list'),
                # Create
-               url(r'^create/$', post_create),
+               url(r'^create/$', post_create, name='url_create'),
                # Detail
                url(r'^detail/(?P<pk>\d+)/$', post_detail),
                url(r'^(?P<pk>\d+)/$', post_detail),
