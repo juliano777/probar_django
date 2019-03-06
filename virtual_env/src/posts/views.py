@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render
 
+from posts.actions import get_post_detail
 from posts.actions import get_post_list
 
 
