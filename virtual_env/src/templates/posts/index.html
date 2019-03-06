@@ -15,8 +15,10 @@
 
   <table>
   <tr>
-    <th>1</th>
-    <th>2</th>
+    <th>{{i.pk}}</th>
+    <th><a href="/posts/{{i.pk}}/">{{i.titulo}}</a></th>
+    <th><a href="/update/{{i.pk}}/">[Editar]</a></th>
+    <th><a href="/delete/{{i.pk}}/">[Apagar]</a></th>    
   </tr>
 </table>
 
