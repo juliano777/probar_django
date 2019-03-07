@@ -2,25 +2,25 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render
 
-from posts.actions.post_crud import detail as post_detail
-from posts.actions.post_crud import show_all as post_show
+from posts.actions.post_crud import detail as crud_detail
+from posts.actions.post_crud import show as crud_show
 
 
-def post_create(request):
+def view_create(request):
     return HttpResponse('<h1>Create</h1>')
 
 
-def post_detail(request, pk=None):
-    return render(request, 'posts/detail.html', post_detail(request, pk))
+def view_detail(request, pk=None):
+    return render(request, 'posts/detail.html', crud_detail(request, pk))
 
 
-def post_show(request):
-    return render(request, 'posts/index.html', post_show_all(request))
+def view_show(request):
+    return render(request, 'posts/index.html', crud_show(request))
 
 
-def post_update(request, pk=None):
+def view_update(request, pk=None):
     return HttpResponse('<h1>Update</h1>')
 
 
-def post_delete(request):
+def view_delete(request):
     return HttpResponse('<h1>Delete</h1>')

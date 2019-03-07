@@ -1,22 +1,22 @@
 from django.conf.urls import url
 
-from posts.views import post_create
-from posts.views import post_delete
-from posts.views import post_detail
-from posts.views import post_list
-from posts.views import post_update
+from posts.views import view_create
+from posts.views import view_delete
+from posts.views import view_detail
+from posts.views import view_show
+from posts.views import view_update
 
 
 
 urlpatterns = (
                # List
-               url(r'^list/$|^$', post_list, name='url_list'),
+               url(r'^list/$|^$', view_show, name='url_list'),
                # Create
-               url(r'^create/$', post_create, name='url_create'),
+               url(r'^create/$', view_create, name='url_create'),
                # Detail
-               url(r'^(?P<pk>\d+)/$', post_detail, name='url_detail'),
+               url(r'^(?P<pk>\d+)/$', view_detail, name='url_detail'),
                # Update
-               url(r'^update/$', post_update, name='url_update'),
+               url(r'^update/$', view_update, name='url_update'),
                # Delete
-               url(r'^delete/$', post_delete, name='url_delete'),
+               url(r'^delete/$', view_delete, name='url_delete'),
               )
