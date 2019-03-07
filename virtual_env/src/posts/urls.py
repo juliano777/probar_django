@@ -10,7 +10,7 @@ from posts.views import view_update
 
 urlpatterns = (
                # List
-               url(r'^list/$|^$', view_show, name='url_list'),
+               url(r'^list/$|^$', view_show, name='url_show'),
                # Create
                url(r'^create/$', view_create, name='url_create'),
                # Detail
