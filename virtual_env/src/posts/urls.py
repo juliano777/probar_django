@@ -10,13 +10,13 @@ from posts.views import view_update
 
 urlpatterns = (
                # List
-               url(r'^list/$|^$', view_show, name='url_show'),
+               url(r'^list/$|^$', view_show, name='show'),
                # Create
-               url(r'^create/$', view_create, name='url_create'),
+               url(r'^create/$', view_create, name='create'),
                # Detail
-               url(r'^(?P<pk>\d+)/$', view_detail, name='url_detail'),
+               url(r'^(?P<pk>\d+)/$', view_detail, name='detail'),
                # Update
-               url(r'^update/$', view_update, name='url_update'),
+               url(r'^update/$', view_update, name='update'),
                # Delete
-               url(r'^delete/$', view_delete, name='url_delete'),
+               url(r'^delete/$', view_delete, name='delete'),
               )
