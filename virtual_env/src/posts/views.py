@@ -19,7 +19,7 @@ def view_show(request):
 
 
 def view_update(request, pk=None):
-    return HttpResponse('<h1>Update</h1>')
+    return render(request, 'posts/update.html', crud_update(request, pk))
 
 
 def view_delete(request):
