@@ -23,4 +23,4 @@ def view_update(request, pk=None):
 
 
 def view_delete(request):
-    return HttpResponse('<h1>Delete</h1>')
+    return render(request, 'posts/delete.html', crud_delete(request, pk))
