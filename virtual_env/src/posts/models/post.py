@@ -5,8 +5,8 @@ from django.db.models import IntegerField
 from django.db.models import Model
 from django.db.models import TextField
 
-from django.core.urlresolvers import reverse
 from django.contrib.postgres.fields import ArrayField as PgArrayField
+from django.core.urlresolvers import reverse
 
 
 class Post(Model):
