@@ -29,6 +29,12 @@ def detail(request, pk=None):
 
     return pk
 
+
+
+
+
+    
+
 def update(request, pk=None):
     context = {}
     return context
