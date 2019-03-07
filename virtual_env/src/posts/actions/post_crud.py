@@ -10,6 +10,8 @@ def show_all(request):
     else:
         context = {'titulo': 'LIST'}
 
+    print(context)
+
     return context
 
 def detail(request, pk=None):
@@ -33,7 +35,7 @@ def detail(request, pk=None):
 
 
 
-    
+
 
 def update(request, pk=None):
     context = {}
