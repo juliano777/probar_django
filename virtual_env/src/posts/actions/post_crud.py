@@ -10,8 +10,6 @@ def show(request):
     else:
         context = {'titulo': 'LIST'}
 
-    print(context)
-
     return context
 
 def detail(request, pk=None):
