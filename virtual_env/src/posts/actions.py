@@ -23,3 +23,7 @@ def get_post_detail(request, pk=None):
         context = {'titulo': 'No access!!!'}
 
     return context
+
+def get_post_update(request, pk=None):
+    
+    return context

@@ -18,7 +18,7 @@ def post_list(request):
     return render(request, 'posts/index.html', get_post_list(request))
 
 
-def post_update(request):
+def post_update(request, pk=None):
     return HttpResponse('<h1>Update</h1>')
 
 
