@@ -25,7 +25,9 @@ def detail(request, pk=None):
 
     return context
     '''
-    return None
+    print(pk)
+
+    return pk
 
 def update(request, pk=None):
     context = {}
