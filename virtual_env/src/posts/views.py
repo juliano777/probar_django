@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404
 from django.shortcuts import render
 
 from posts.actions.post_crud import detail as post_detail
-from posts.actions.post_crud import get_post_list
+from posts.actions.post_crud import list as post_list
 
 
 def post_create(request):
@@ -11,11 +11,11 @@ def post_create(request):
 
 
 def post_detail(request, pk=None):
-    return render(request, 'posts/detail.html', get_post_detail(request, pk))
+    return render(request, 'posts/detail.html', post_detail(request, pk))
 
 
 def post_list(request):
-    return render(request, 'posts/index.html', get_post_list(request))
+    return render(request, 'posts/index.html', post_list(request))
 
 
 def post_update(request, pk=None):
