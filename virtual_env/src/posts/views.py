@@ -2,8 +2,8 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render
 
-from posts.actions import get_post_detail
-from posts.actions import get_post_list
+from posts.actions.post_crud import detail as post_detail
+from posts.actions.post_crud import get_post_list
 
 
 def post_create(request):
