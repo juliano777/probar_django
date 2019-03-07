@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404
 from posts.models import Post
 
 
-def list(request):
+def show_all(request):
     if request.user.is_authenticated():
         queryset = Post.objects.all()
         context = {'titulo': 'LIST - Usuário autenticado', 'lista': queryset}
