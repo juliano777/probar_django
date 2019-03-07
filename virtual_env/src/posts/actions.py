@@ -25,5 +25,5 @@ def get_post_detail(request, pk=None):
     return context
 
 def get_post_update(request, pk=None):
-    
+    context = {}
     return context
