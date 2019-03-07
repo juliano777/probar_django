@@ -13,6 +13,7 @@ def show_all(request):
     return context
 
 def detail(request, pk=None):
+    '''
     if request.user.is_authenticated():
         instance = get_object_or_404(Post, pk=pk)
         context = {
@@ -23,6 +24,8 @@ def detail(request, pk=None):
         context = {'titulo': 'No access!!!'}
 
     return context
+    '''
+    return None
 
 def update(request, pk=None):
     context = {}
