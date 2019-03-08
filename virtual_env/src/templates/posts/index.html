@@ -19,15 +19,17 @@
       <td>{{i.pk}}</td>
 
       <td align="left">
-        <a href="/{{i.pk}}">{{i.titulo}}</a>
+        <a href="/posts/{{i.pk}}">{{i.titulo}}</a>
+        <!-- <a href='{#% url "posts:detail" pk=i.pk %#}'>{{i.titulo}}</a> -->
+
       </td>
 
       <td>
-        <a href="/update/{{i.pk}}/">[Editar]</a>
+        <a href="/posts/update/{{i.pk}}/">[Editar]</a>
       </td>
 
       <td>
-        <a href="/delete/{{i.pk}}/">[Apagar]</a>
+        <a href="/posts/delete/{{i.pk}}/">[Apagar]</a>
       </td>
 
     </tr>
