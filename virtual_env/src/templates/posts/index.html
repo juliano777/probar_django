@@ -23,7 +23,8 @@
       </td>
 
       <td>
-        <a href="/update/{{i.pk}}/">[Editar]</a>
+        <!-- <a href="/update/{{i.pk}}/">[Editar]</a> -->
+        <a href='{% url "posts:update" pk=i.pk %}'>[Editar]</a>
       </td>
 
       <td>
