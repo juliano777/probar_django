@@ -29,7 +29,10 @@ def detail(request, pk=None):
 
 def create(request):
     form = PostForm()
-    context = {}
+    context = {
+               'form': form,
+               'instance': instance,
+               }
     return context
 
 def update(request, pk=None):
