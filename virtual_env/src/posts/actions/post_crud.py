@@ -31,7 +31,7 @@ def create(request):
     form = PostForm()
     context = {
                'form': form,
-               'instance': instance,
+               
                }
     return context
 
