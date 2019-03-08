@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404
 
 from posts.models import Post
+from posts.forms import PostForm
 
 
 def show(request):
