@@ -15,7 +15,7 @@ def view_detail(request, pk=None):
 
 
 def view_show(request):
-    return render(request, 'posts/index.html', crud_show(request))
+    return render(request, 'posts/index000.html', crud_show(request))
 
 
 def view_update(request, pk=None):
