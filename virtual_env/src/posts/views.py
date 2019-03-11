@@ -5,6 +5,7 @@ from django.shortcuts import render
 from posts.actions.post_crud import create as crud_create
 from posts.actions.post_crud import detail as crud_detail
 from posts.actions.post_crud import show as crud_show
+from posts.actions.post_crud import update as crud_update
 
 
 def view_create(request):
