@@ -27,10 +27,14 @@ def detail(request, pk=None):
 
     return context
 
+
 def create(request):
-    form = PostForm()
-    if request.method == 'POST':
-        print(request.POST)
+    form = PostForm(request.POST or None)
+
+    if form.is_valid():
+        instance = form.save(commit=False)
+        print(form.cleaned_data.get('titulo'))
+        instance.save()
     context = {'form': form,}
 
     return context
