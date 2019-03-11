@@ -33,7 +33,6 @@ def create(request):
 
     if form.is_valid():
         instance = form.save(commit=False)
-        print(form.cleaned_data.get('titulo'))
         instance.save()
     context = {'form': form,}
 
@@ -41,12 +40,12 @@ def create(request):
 
 
 def update(request, pk=None):
+    instance = get_object_or_404(Post, pk=pk)
     form = PostForm(request.POST or None)
 
     if form.is_valid():
         instance = form.save(commit=False)
-        print(form.cleaned_data.get('titulo'))
         instance.save()
-    context = {'form': form,}
+    context = {'form': form, 'instance': instance, 'form': form}
 
     return context
