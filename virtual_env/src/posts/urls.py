@@ -16,7 +16,7 @@ urlpatterns = (
                # Detail
                url(r'^(?P<pk>\d+)/$', view_detail, name='detail'),
                # Update
-               url(r'^update/$', view_update, name='update'),
+               url(r'^(?P<pk>\d+)/update/$', view_update, name='update'),
                # Delete
                url(r'^delete/$', view_delete, name='delete'),
               )
