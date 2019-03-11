@@ -41,7 +41,7 @@ def create(request):
 
 def update(request, pk=None):
     instance = get_object_or_404(Post, pk=pk)
-    form = PostForm(request.POST or None)
+    form = PostForm(request.POST or None, instance=instance)
 
     if form.is_valid():
         instance = form.save(commit=False)
