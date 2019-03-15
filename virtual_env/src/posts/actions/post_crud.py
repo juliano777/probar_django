@@ -13,9 +13,9 @@ def form_is_valid(form):
 def show(request):
     if request.user.is_authenticated():
         queryset = Post.objects.all()
-        return {'titulo': 'LIST - Usuário autenticado', 'lista': queryset}
+        return {'titulo': 'Listagem de Posts', 'lista': queryset}
     else:
-        return {'titulo': 'LIST'}
+        return {'titulo': 'É preciso se autenticar!!!'}
 
 
 def detail(request, pk=None):
