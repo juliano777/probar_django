@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404
+from django.shortcuts import HttpResponseRedirect
 
 from posts.models import Post
 from posts.forms import PostForm
