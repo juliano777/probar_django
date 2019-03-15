@@ -9,7 +9,9 @@ def form_is_valid(form):
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
+        print('***')
         print(HttpResponseRedirect(instance.get_absolute_url()))
+        print('***')
 
 
 def show(request):
