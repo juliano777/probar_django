@@ -4,6 +4,12 @@ from posts.models import Post
 from posts.forms import PostForm
 
 
+def form_is_valid(form):
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+
+
 def show(request):
     if request.user.is_authenticated():
         queryset = Post.objects.all()
@@ -30,10 +36,7 @@ def detail(request, pk=None):
 
 def create(request):
     form = PostForm(request.POST or None)
-
-    if form.is_valid():
-        instance = form.save(commit=False)
-        instance.save()
+    form_is_valid(form)
 
     return {'form': form,}
 
@@ -41,9 +44,6 @@ def create(request):
 def update(request, pk=None):
     instance = get_object_or_404(Post, pk=pk)
     form = PostForm(request.POST or None, instance=instance)
-
-    if form.is_valid():
-        instance = form.save(commit=False)
-        instance.save()
+    form_is_valid(form)
 
     return {'form': form, 'instance': instance, 'form': form}
