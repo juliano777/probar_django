@@ -34,9 +34,8 @@ def create(request):
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
-    context = {'form': form,}
 
-    return context
+    return {'form': form,}
 
 
 def update(request, pk=None):
@@ -46,6 +45,5 @@ def update(request, pk=None):
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
-    context = {'form': form, 'instance': instance, 'form': form}
 
-    return context
+    return {'form': form, 'instance': instance, 'form': form}
