@@ -2,7 +2,9 @@
   <body>
     <h1>Post Form</h1>
 
-    <form method="post" action="">
+
+
+    <form method="post" action="/posts/{{instance.pk}}/"}}>
       {% csrf_token %}
       {{form.as_p}}
 
