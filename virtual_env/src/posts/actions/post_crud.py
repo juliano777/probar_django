@@ -34,7 +34,6 @@ def detail(request, pk=None):
 def create(request):
     form = PostForm(request.POST or None)
     form_is_valid(form)
-
     return {'form': form,}
 
 
@@ -42,5 +41,4 @@ def update(request, pk=None):
     instance = get_object_or_404(Post, pk=pk)
     form = PostForm(request.POST or None, instance=instance)
     form_is_valid(form)
-
     return {'form': form, 'instance': instance, 'form': form}
