@@ -7,16 +7,15 @@ from posts.views import view_show
 from posts.views import view_update
 
 
-
 urlpatterns = (
-               # List
-               url(r'^list/$|^$', view_show, name='show'),
-               # Create
-               url(r'^create/$', view_create, name='create'),
-               # Detail
-               url(r'^(?P<pk>\d+)/$', view_detail, name='detail'),
-               # Update
-               url(r'^(?P<pk>\d+)/update/$', view_update, name='update'),
-               # Delete
-               url(r'^(?P<pk>\d+)/delete/$', view_delete, name='delete'),
-              )
+    # List
+    url(r'^list/$|^$', view_show, name='show'),
+    # Create
+    url(r'^create/$', view_create, name='create'),
+    # Detail
+    url(r'^(?P<pk>\d+)/$', view_detail, name='detail'),
+    # Update
+    url(r'^(?P<pk>\d+)/update/$', view_update, name='update'),
+    # Delete
+    url(r'^(?P<pk>\d+)/delete/$', view_delete, name='delete'),
+)

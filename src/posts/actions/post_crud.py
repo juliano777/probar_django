@@ -9,8 +9,7 @@ def form_is_valid(form):
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
-        #HttpResponseRedirect(instance.get_absolute_url()))
-
+        # HttpResponseRedirect(instance.get_absolute_url()))
 
 
 def show(request):
@@ -27,9 +26,9 @@ def detail(request, pk=None):
         instance = get_object_or_404(Post, pk=pk)
 
         return {
-                'titulo': 'Detail - Usuário autenticado',
-                'instance': instance,
-               }
+            'titulo': 'Detail - Usuário autenticado',
+            'instance': instance,
+        }
     else:
         return {'titulo': 'No access!!!'}
 
@@ -37,7 +36,7 @@ def detail(request, pk=None):
 def create(request):
     form = PostForm(request.POST or None)
     form_is_valid(form)
-    return {'form': form,}
+    return {'form': form, }
 
 
 def update(request, pk=None):
