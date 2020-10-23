@@ -14,7 +14,7 @@ Curso de Django 1.10.
 
 ## Preparação do Ambiente
 
-```
+```bash
 sudo apt -y install python3-venv
 
 sudo apt clean
