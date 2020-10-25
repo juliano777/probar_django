@@ -14,35 +14,99 @@ Curso de Django 1.10.
 
 ## Preparação do Ambiente
 
+Instalação do pacote python3-venv e limpando o cache de pacotes em seguida:
+
 ```bash
-sudo apt -y install python3-venv
+sudo apt -y install python3-venv && sudo apt clean
+```
 
-sudo apt clean
+Clonar o repositório git:
 
+```bash
 git clone https://github.com/juliano777/probar_django.git
+```
+
+Ir para o diretório do repositório:
+
+```bash
 cd probar_django
+```
 
-python3 -m venv .venv
+Verificando o conteúdo do script venv_active.sh:
 
+```bash
+cat venv_active.sh
+```
+
+    #!/bin/bash
+
+    # Cria o ambiente virtual:
+    python3 -m venv .venv
+
+    # Habilita o ambiente virtual:
+    source .venv/bin/activate
+
+    # Atualiza o pip:
+    pip install -U pip
+
+    # Instala dependências:
+    pip install -r requirements.txt
+
+Utilizar o script para operações de preparo do ambiente:
+
+```bash
 . ./venv_active.sh
+```
 
+Criação do projeto Django:
+
+```bash
 django-admin startproject probar_django
+```
 
+Renomear o diretório que tem o nome do projeto para src:
+
+```bash
 mv probar_django src
+```
 
+Criação do contêiner de banco de dados PostgreSQL:
+
+```bash
 docker container run -itd --name db_probar_django --hostname db-probar-django.local -p 5432:5432 juliano777/postgres
+```
 
+Verificar o contêiner criado:
+
+```bash
 docker container ls | fgrep 'probar_django'
-5092c2516f13        juliano777/postgres   "docker-entrypoint.s…"   33 seconds ago      Up 33 seconds       0.0.0.0:5432->5432/tcp   db_probar_django
+```
 
+    5092c2516f13        juliano777/postgres   "docker-entrypoint.s…"   33 seconds ago      Up 33 seconds       0.0.0.0:5432->5432/tcp   db_probar_django
+
+Criação de variável de ambiente para senha do usuário de banco do Django:
+
+```bash
 read -sp 'Digite a senha do usuário: ' PWD_DB_USER_DJANGO
+```
 
+Criar um role usuário no servidor de banco de dados:
+
+```bash
 docker container exec -it db_probar_django psql -c \
 "CREATE ROLE user_django LOGIN ENCRYPTED PASSWORD '${PWD_DB_USER_DJANGO}'"
+```
 
+Criação da base de dados:
+
+```bash
 docker container exec -it db_probar_django psql -c \
 'CREATE DATABASE db_probar_django OWNER user_django'
+```
 
+Via recurso de shell heredoc, criar o arquivo de configurações de banco de dados:
+
+```bash
 cat << EOF > src/probar_django/db.conf
 DB_HOST = 'localhost'
 DB_NAME = 'db_probar_django'
@@ -99,9 +163,15 @@ DATABASES = {
 ```
 
 
-
+```bash
 cd src
-~python manage.py migrate~
-python manage.py runserver
+```
 
+```bash
+python manage.py migrate
+```
+
+
+```bash
+python manage.py runserver
 ```
