@@ -73,7 +73,11 @@ mv probar_django src
 Criação do contêiner de banco de dados PostgreSQL:
 
 ```bash
-docker container run -itd --name db_probar_django --hostname db-probar-django.local -p 5432:5432 juliano777/postgres
+docker container run -itd \
+    --name db_probar_django \
+    --hostname db-probar-django.local \
+    -p 5432:5432 \
+    juliano777/postgres
 ```
 
 Verificar o contêiner criado:
@@ -83,6 +87,7 @@ docker container ls | fgrep 'probar_django'
 ```
 
     5092c2516f13        juliano777/postgres   "docker-entrypoint.s…"   33 seconds ago      Up 33 seconds       0.0.0.0:5432->5432/tcp   db_probar_django
+
 
 Criação de variável de ambiente para senha do usuário de banco do Django:
 
@@ -104,6 +109,16 @@ docker container exec -it db_probar_django psql -c \
 'CREATE DATABASE db_probar_django OWNER user_django'
 ```
 
+
+Criação do schema (namespace) para metadados do Django:
+
+```bash
+docker container exec -it db_probar_django \
+psql -U user_django -d db_probar_django -c \
+'CREATE SCHEMA ns_django;'
+```
+
+
 Via recurso de shell heredoc, criar o arquivo de configurações de banco de dados:
 
 ```bash
@@ -113,8 +128,24 @@ DB_NAME = 'db_probar_django'
 DB_USER = 'user_django'
 DB_PASSWORD = '${PWD_DB_USER_DJANGO}'
 DB_PORT = 5432
+DB_OPTIONS = '-c search_path=ns_django,public'
 EOF
 ```
+
+
+
+Também via heredoc, gerar o arquivo .env que terá algumas variáveis que não
+serão versionadas:
+
+```bash
+cat << EOF > src/probar_django/.env
+SECRET_KEY = '`python3 secret_key_gen.py`'
+DEBUG = True
+ALLOWED_HOSTS = ('.localhost', '127.0.0.1', '[::1]')
+EOF
+```
+
+
 
 ### settings.py
 
@@ -129,18 +160,33 @@ Adicione o import:
 from configobj import ConfigObj
 ```
 
+Logo após a declaração da variável `BASE_DIR` adicione as linhas: 
+
+```python
+
+# Database configuration file
+DB_CONF_FILE = f'{BASE_DIR}/probar_django/db.conf'
+
+# Environment variables file
+ENV_FILE = f'{BASE_DIR}/probar_django/.env'
+```
+
+Substitua os valores de `SECRET_KEY`, `DEBUG` e `ALLOWED_HOSTS` conforme segue:
+
+```python
+SECRET_KEY = ENV_FILE['SECRET_KEY']
+DEBUG = ENV_FILE['DEBUG']
+ALLOWED_HOSTS = ENV_FILE['ALLOWED_HOSTS']
+```
+
+
+
 Substitua toda a parte referente a banco de dados (Database) pelo seguinte
 conteúdo:
 
 ```python
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
-# Database configuration file location
-DB_CONF_FILE = f'{BASE_DIR}/probar_django/db.conf'
-
-# Read the configurations from file
-DB_CONFIG = ConfigObj(DB_CONF_FILE)
 
 # Database connection parameters
 
@@ -149,6 +195,7 @@ DB_NAME = DB_CONFIG['DB_NAME']
 DB_USER = DB_CONFIG['DB_USER']
 DB_PASSWORD = DB_CONFIG['DB_PASSWORD']
 DB_PORT = DB_CONFIG['DB_PORT']
+DB_OPTIONS = DB_CONFIG['DB_OPTIONS']
 
 DATABASES = {
              'default': {
@@ -158,8 +205,15 @@ DATABASES = {
                          'PASSWORD': DB_PASSWORD,
                          'HOST': DB_HOST,
                          'PORT': DB_PORT,
+                         'OPTIONS': {'options': DB_OPTIONS},
                          }
             }
+```
+
+Criação de link simbólico para manage.py dentro do /bin do ambiente virtual:
+
+```bash
+ln -s `pwd`/src/manage.py `pwd`/.venv/bin/manage.py
 ```
 
 

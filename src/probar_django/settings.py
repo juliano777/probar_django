@@ -17,15 +17,23 @@ from configobj import ConfigObj
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# Database configuration file
+DB_CONF_FILE = f'{BASE_DIR}/probar_django/db.conf'
+
+# Environment variables file
+ENV_FILE = f'{BASE_DIR}/probar_django/.env'
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
+
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '7b9u_#+z31_r9qg@jgq_c(7o=*62x679vv75vbwusz1rd3$2ym'
+SECRET_KEY = ENV_FILE['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = ENV_FILE['DEBUG']
 
 ALLOWED_HOSTS = []
 
@@ -72,15 +80,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'probar_django.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
-# Database configuration file location
-DB_CONF_FILE = f'{BASE_DIR}/probar_django/db.conf'
-
-# Read the configurations from file
-DB_CONFIG = ConfigObj(DB_CONF_FILE)
-
 # Database connection parameters
 
 DB_HOST = DB_CONFIG['DB_HOST']
@@ -88,6 +87,7 @@ DB_NAME = DB_CONFIG['DB_NAME']
 DB_USER = DB_CONFIG['DB_USER']
 DB_PASSWORD = DB_CONFIG['DB_PASSWORD']
 DB_PORT = DB_CONFIG['DB_PORT']
+DB_OPTIONS = DB_CONFIG['DB_OPTIONS']
 
 DATABASES = {
              'default': {
@@ -97,6 +97,7 @@ DATABASES = {
                          'PASSWORD': DB_PASSWORD,
                          'HOST': DB_HOST,
                          'PORT': DB_PORT,
+                         'OPTIONS': {'options': DB_OPTIONS},
                          }
             }
 
