@@ -1,6 +1,6 @@
-# probar_django
+# Probar Django
 
-Curso de Django 1.10.
+Curso de Django.
 
 ## Como contribuir?
 
