@@ -19,23 +19,23 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Database configuration file
 DB_CONF_FILE = f'{BASE_DIR}/probar_django/db.conf'
+DB_CONFIG = ConfigObj(DB_CONF_FILE)
 
 # Environment variables file
 ENV_FILE = f'{BASE_DIR}/probar_django/.env'
+ENV_CONFIG = ConfigObj(ENV_FILE)
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
-
-
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ENV_FILE['SECRET_KEY']
+SECRET_KEY = ENV_CONFIG['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = ENV_FILE['DEBUG']
+DEBUG = ENV_CONFIG['DEBUG']
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ENV_CONFIG['ALLOWED_HOSTS']
 
 
 # Application definition
@@ -77,8 +77,12 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'probar_django.wsgi.application'
 
+
+# Database
+# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 # Database connection parameters
 

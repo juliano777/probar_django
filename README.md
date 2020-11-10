@@ -141,7 +141,7 @@ serão versionadas:
 cat << EOF > src/probar_django/.env
 SECRET_KEY = '`python3 secret_key_gen.py`'
 DEBUG = True
-ALLOWED_HOSTS = ('.localhost', '127.0.0.1', '[::1]')
+ALLOWED_HOSTS = '.localhost', '127.0.0.1', '[::1]'
 EOF
 ```
 
@@ -166,19 +166,20 @@ Logo após a declaração da variável `BASE_DIR` adicione as linhas:
 
 # Database configuration file
 DB_CONF_FILE = f'{BASE_DIR}/probar_django/db.conf'
+DB_CONFIG = ConfigObj(DB_CONF_FILE)
 
 # Environment variables file
 ENV_FILE = f'{BASE_DIR}/probar_django/.env'
+ENV_CONFIG = ConfigObj(ENV_FILE)
 ```
 
 Substitua os valores de `SECRET_KEY`, `DEBUG` e `ALLOWED_HOSTS` conforme segue:
 
 ```python
-SECRET_KEY = ENV_FILE['SECRET_KEY']
-DEBUG = ENV_FILE['DEBUG']
-ALLOWED_HOSTS = ENV_FILE['ALLOWED_HOSTS']
+SECRET_KEY = ENV_CONFIG['SECRET_KEY']
+DEBUG = ENV_CONFIG['DEBUG']
+ALLOWED_HOSTS = ENV_CONFIG['ALLOWED_HOSTS']
 ```
-
 
 
 Substitua toda a parte referente a banco de dados (Database) pelo seguinte
@@ -210,22 +211,15 @@ DATABASES = {
             }
 ```
 
-Criação de link simbólico para manage.py dentro do /bin do ambiente virtual:
-
-```bash
-ln -s `pwd`/src/manage.py `pwd`/.venv/bin/manage.py
-```
-
-
 ```bash
 cd src
 ```
 
 ```bash
-python manage.py migrate
+python3 manage.py migrate
 ```
 
 
 ```bash
-python manage.py runserver
+python3 manage.py runserver
 ```
